@@ -12,11 +12,11 @@ describe OFX::Statement do
     end
 
     it "returns start date" do
-      statement.start_date.should == Time.parse("2009-10-09 08:00:00")
+      expect(statement.start_date).to be_at_same_time_of(Time.parse("2009-10-09 08:00:00"))
     end
 
     it "returns end date" do
-      statement.end_date.should == Time.parse("2009-11-03 08:00:00")
+      expect(statement.end_date).to be_at_same_time_of(Time.parse("2009-11-03 08:00:00"))
     end
 
     it "returns account" do
@@ -42,7 +42,7 @@ describe OFX::Statement do
       end
 
       it "returns balance date" do
-        balance.posted_at.should == Time.parse("2009-11-01")
+        expect(balance.posted_at).to be_at_same_time_of(Time.parse("2009-11-01"))
       end
     end
 
@@ -58,7 +58,7 @@ describe OFX::Statement do
       end
 
       it "returns available balance date" do
-        available_balance.posted_at.should == Time.parse("2009-11-01")
+        expect(available_balance.posted_at).to be_at_same_time_of(Time.parse("2009-11-01"))
       end
 
       context "when AVAILBAL not found" do
@@ -79,11 +79,11 @@ describe OFX::Statement do
     end
 
     it "returns start date" do
-      statement.start_date.should == Time.parse("2007-05-09 12:00:00")
+      expect(statement.start_date).to be_at_same_time_of(Time.parse("2007-05-09 12:00:00"))
     end
 
     it "returns end date" do
-      statement.end_date.should == Time.parse("2007-06-08 12:00:00")
+      expect(statement.end_date).to be_at_same_time_of(Time.parse("2007-06-08 12:00:00"))
     end
 
     it "returns account" do
@@ -108,7 +108,7 @@ describe OFX::Statement do
       end
 
       it "returns balance date" do
-        balance.posted_at.should == Time.parse("2007-06-23 19:20:13")
+        expect(balance.posted_at).to be_at_same_time_of(Time.parse("2007-06-23 19:20:13"))
       end
     end
 
@@ -124,7 +124,7 @@ describe OFX::Statement do
       end
 
       it "returns available balance date" do
-        available_balance.posted_at.should == Time.parse("2007-06-23 19:20:13")
+        expect(available_balance.posted_at).to be_at_same_time_of(Time.parse("2007-06-23 19:20:13"))
       end
     end
   end
